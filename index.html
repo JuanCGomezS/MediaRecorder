@@ -10,9 +10,6 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css" />
-
     <!-- Fonts -->
     <link
       rel="stylesheet"
@@ -24,7 +21,12 @@
     />
 
     <!-- CSS -->
+    <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
 
     <!-- Modernizr JS for IE8 support of HTML5 elements and media queries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
@@ -196,7 +198,9 @@
                 </div>
               </div>
 
-              <div class="mb-2">
+              <div
+                class="my-4 align-items-center d-flex justify-content-between"
+              >
                 <a class="btn btn-icon btn-lg" role="button" id="startButton">
                   <span class="lnr lnr-film-play"></span>
                   Iniciar
@@ -207,33 +211,64 @@
                   id="stopButton"
                   >Detener
                 </a>
+                <div id="recordIndicator" class="recordIndicator"></div>
+                <span id="timer" class="timer"></span>
               </div>
-              <!-- <ul class="hero-info list-unstyled d-flex text-center mb-0">
-                <li class="border-right">
-                  <span class="lnr lnr-rocket"></span>
-                  <h5>Fast Delivery</h5>
-                </li>
-                <li class="border-right">
-                  <span class="lnr lnr-leaf"></span>
-                  <h5>Fresh Food</h5>
-                </li>
-                <li class="">
-                  <span class="lnr lnr-bubble"></span>
-                  <h5>24/7 Support</h5>
-                </li>
-              </ul> -->
             </div>
-            <!-- <div class="col-lg-6 hero-right">
-              <div class="owl-carousel owl-theme hero-carousel"></div>
-            </div> -->
           </div>
         </div>
       </div>
 
-      <!-- End of Reservation Section -->
       <footer class="mastfoot section-padding pb-0">
         <div class="inner container">
-          <div class="row"></div>
+          <hr className="border-slate-200" />
+          <div class="row justify-content-lg-between">
+            <div class="col-md-4">
+              <p>
+                © 2024 <strong>Juan Gomez</strong>. Todos los derechos
+                reservados.
+              </p>
+            </div>
+
+            <div class="col-md-4 text-right">
+              <a
+                class="btn btn-icon btn-lg"
+                role="button"
+                id="startButton"
+                href="https://github.com/JuanCGomezS"
+                target="_blank"
+              >
+                <i class="fab fa-github icon-size"></i>
+              </a>
+              <a
+                class="btn btn-icon btn-lg"
+                role="button"
+                id="whatsappButton"
+                href="https://api.whatsapp.com/send?phone=+573013971483&text=Hello,%20from%20your%20blog!."
+                target="_blank"
+              >
+                <i class="fab fa-whatsapp icon-size"></i>
+              </a>
+              <a
+                class="btn btn-icon btn-lg"
+                role="button"
+                id="linkedinButton"
+                href="https://www.linkedin.com/in/juancarlosgomezs/"
+                target="_blank"
+              >
+                <i class="fab fa-linkedin-in icon-size"></i>
+              </a>
+              <a
+                class="btn btn-icon btn-lg"
+                role="button"
+                id="twitterButton"
+                href="https://twitter.com/JuanCar21619604"
+                target="_blank"
+              >
+                <i class="fab fa-twitter icon-size"></i>
+              </a>
+            </div>
+          </div>
         </div>
       </footer>
     </div>
