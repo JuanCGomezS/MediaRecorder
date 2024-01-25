@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Media Recorder</title>
+    <meta name="description" content="MediaRecorder" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css" />
+
+    <!-- Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Josefin+Sans:300,400,700"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.min.css" />
+
+    <!-- Modernizr JS for IE8 support of HTML5 elements and media queries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+  </head>
+  <body data-spy="scroll" data-target="#navbar" class="static-layout">
+    <div id="side-search" class="sidenav">
+      <a href="javascript:void(0)" id="side-search-close">&times;</a>
+      <div class="sidenav-content">
+        <form action="">
+          <div class="input-group md-form form-sm form-2 pl-0">
+            <input
+              class="form-control my-0 py-1 red-border"
+              type="text"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <div class="input-group-append">
+              <button class="input-group-text red lighten-3" id="basic-text1">
+                <i class="fas fa-search text-grey" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div id="canvas-overlay"></div>
+    <!--Movil-->
+    <div class="boxed-page">
+      <nav id="navbar-header" class="navbar navbar-expand-lg">
+        <div class="container">
+          <a
+            class="navbar-brand navbar-brand-center d-flex align-items-center p-0 only-mobile"
+            href="/"
+          >
+            <img src="img/logo.svg" alt="" />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="lnr lnr-menu"></span>
+          </button>
+
+          <div
+            class="collapse navbar-collapse justify-content-lg-between"
+            id="navbarSupportedContent"
+          >
+            <a
+              class="navbar-brand navbar-brand-center d-flex align-items-center only-desktop"
+              href="#"
+            >
+              <img src="img/logo.svg" alt="" />
+            </a>
+            <ul class="navbar-nav d-flex">
+              <!--<div class="d-flex flex-lg-row flex-column">
+                 <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="navbarDropdown"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    Special Dishes
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="special-dishes.html"
+                      >Beef Steak Sauce</a
+                    >
+                    <a class="dropdown-item" href="special-dishes.html"
+                      >Salmon Zucchini</a
+                    >
+                  </div>
+                </li> 
+              </div>-->
+              <div class="d-flex flex-lg-row flex-column">
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    href="https://juancgomezs.github.io/Project-3D"
+                    target="_blank"
+                    >Sobre Mi</a
+                  >
+                </li>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link"
+                    href="https://github.com/JuanCGomezS"
+                    target="_blank"
+                    >Github</a
+                  >
+                </li>
+                <li id="myLi" class="nav-item only-desktop">
+                  <a class="nav-link" id="side-nav-open" href="#">
+                    <span class="lnr lnr-menu"></span>
+                  </a>
+                </li>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="hero m-5">
+        <div class="container">
+          <div class="row d-flex align-items-center">
+            <div class="col-lg-6 hero-left">
+              <h1 class="display-4">Graba Tu Pantalla</h1>
+              <h2>Gratis</h2>
+              <div class="form-group">
+                <label for="enableSound">Activar sonido</label>
+                <input
+                  type="radio"
+                  id="enableSound"
+                  name="audioOption"
+                  class="form-control radio-button"
+                  checked
+                />
+                <label for="enableMic">Grabar audio del micrófono</label>
+                <input
+                  type="radio"
+                  id="enableMic"
+                  name="audioOption"
+                  class="form-control radio-button"
+                />
+              </div>
+
+              <div class="row align-items-center">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label for="resolution">Resolución de Video</label>
+                    <select id="resolution" class="form-control">
+                      <option value="360">360p</option>
+                      <option value="480">480p</option>
+                      <option value="576">576p</option>
+                      <option value="720" selected>720p</option>
+                      <option value="1080">1080p</option>
+                      <option value="4k">4K</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label for="framerate">Tasa de Fotogramas</label>
+                    <select id="framerate" class="form-control">
+                      <option value="30">30 FPS</option>
+                      <option value="60">60 FPS</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label for="maxDuration">Duración (Minutos)</label>
+                    <input
+                      type="number"
+                      id="maxDuration"
+                      min="1"
+                      class="form-control"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-2">
+                <a class="btn btn-icon btn-lg" role="button" id="startButton">
+                  <span class="lnr lnr-film-play"></span>
+                  Iniciar
+                </a>
+                <a
+                  class="btn btn-primary btn-shadow btn-lg text-white"
+                  role="button"
+                  id="stopButton"
+                  >Detener
+                </a>
+              </div>
+              <!-- <ul class="hero-info list-unstyled d-flex text-center mb-0">
+                <li class="border-right">
+                  <span class="lnr lnr-rocket"></span>
+                  <h5>Fast Delivery</h5>
+                </li>
+                <li class="border-right">
+                  <span class="lnr lnr-leaf"></span>
+                  <h5>Fresh Food</h5>
+                </li>
+                <li class="">
+                  <span class="lnr lnr-bubble"></span>
+                  <h5>24/7 Support</h5>
+                </li>
+              </ul> -->
+            </div>
+            <!-- <div class="col-lg-6 hero-right">
+              <div class="owl-carousel owl-theme hero-carousel"></div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+
+      <!-- End of Reservation Section -->
+      <footer class="mastfoot section-padding pb-0">
+        <div class="inner container">
+          <div class="row"></div>
+        </div>
+      </footer>
+    </div>
+    <!-- External JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <script src="vendor/bootstrap/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Main JS -->
+    <script src="js/app.min.js "></script>
+  </body>
+</html>
